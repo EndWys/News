@@ -1,0 +1,20 @@
+﻿@model PostCategory
+
+@await Html.PartialAsync("HeadlinePartial")
+
+<section>
+
+    <form asp-controller="EditCategory" asp-action="RedactCategory" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="id" />
+        <input type="hidden" asp-for="dateTime" />
+        <div class="fields">
+            <div class="field">
+                <label asp-for="categoryName">Category Name</label>
+                <input asp-for="categoryName" />
+            </div>
+            <div class="field">
+                <input type="submit" value="Save" />
+            </div>
+        </div>
+    </form>
+</section>

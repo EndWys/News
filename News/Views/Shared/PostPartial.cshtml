@@ -1,0 +1,16 @@
+﻿@model PostItem
+<article>
+    <header>
+        <span class="date">@Model.dateTime</span>
+        <h2>
+            <a asp-controller="PostPage" asp-action="Post" asp-route-id="@Model.id">
+                @Model.titele
+            </a>
+        </h2>
+    </header>
+    <a asp-controller="PostPage" asp-action="Post" asp-route-id="@Model.id" class="image fit"><img src="@Model.image" alt="" /></a>
+    <p>@Model.shortDescription</p>
+    <ul class="actions special">
+        <li><a href="#" class="button">Full Story</a></li>
+    </ul>
+</article>

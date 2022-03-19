@@ -1,0 +1,21 @@
+﻿@{       
+    if (ViewBag.ActiveMenuPartial == null) {
+        ViewBag.ActiveMenuPartial = new Dictionary<string, string> { { "HomePage", "active" }, { "CreatePost", "" }, { "AboutUs", "" } };
+    }
+}
+
+<nav id="nav">
+    <ul class="links">
+        
+        <li class="@ViewBag.ActiveMenuPartial["HomePage"]"><a asp-controller="Home" asp-action="Index" >Home Page</a></li>
+        <li class="@ViewBag.ActiveMenuPartial["CreatePost"]"><a asp-controller="EditPost" asp-action="RedactPost">Create Post</a></li>
+        <li class="@ViewBag.ActiveMenuPartial["AboutUs"]"><a href="#">About Us</a></li>
+    </ul>
+    <ul class="icons">
+        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        <li><a asp-controller="AdminPanel" asp-action="Index" class="icon fa-user"><span class="label">Log In</span></a></li>
+    </ul>
+</nav>

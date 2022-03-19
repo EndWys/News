@@ -1,0 +1,18 @@
+﻿@model IEnumerable<PostItem>
+@await Html.PartialAsync("HeadlinePartial")
+
+<article>
+    <ul class="actions">
+        <li><a asp-controller="EditPost" asp-action="RedactPost" class="button primary">Create New Post</a></li>
+        <li><a asp-controller="EditCategory" asp-action="RedactCategory" class="button">Create New Category</a></li>
+        <li><select></select></li>
+        
+    </ul>
+</article>
+
+    @{
+        foreach (PostItem post in Model)
+        {
+            @await Html.PartialAsync("AdminPanelPostPartial", post)
+        }
+    }

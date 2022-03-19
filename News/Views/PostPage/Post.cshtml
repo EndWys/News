@@ -1,0 +1,16 @@
+﻿@model PostItem
+
+<!--Post page-->
+<section class="post">
+    <header class="major">
+        <span class="date">@Model.dateTime</span>
+        <h1>
+            @Model.titele
+        </h1>
+        <p>
+            @Model.shortDescription
+        </p>
+    </header>
+    <div class="image main"><img src="@Model.image" alt="" /></div>
+    <p>@Model.longDescription</p>
+</section>

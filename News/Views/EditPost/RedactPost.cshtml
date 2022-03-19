@@ -1,0 +1,50 @@
+﻿@model PostItem
+
+@await Html.PartialAsync("HeadlinePartial")
+
+<section>
+    <form asp-controller="EditPost" asp-action="RedactPost" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All"></div>
+        <input type="hidden" asp-for="id"/>
+        <input type="hidden" asp-for="dateTime"/>
+        <div class="fields">
+            <div class="field">
+                <label asp-for="titele"></label>
+                <input asp-for="titele" placeholder="Enter titel"/>
+                <span asp-validation-for="titele"></span>
+            </div>
+            <div class="field">
+                <label asp-for="image"></label>
+                <input asp-for="image" placeholder="Enter image address"/>
+                <span asp-validation-for="image"></span>
+                </div>
+            <div class="field">
+                <label asp-for="categoryId"></label>
+                <select asp-for="categoryId" asp-items="@ViewBag.Categories"></select>
+                <span asp-validation-for="categoryId"></span>
+            </div>
+            <div class="field">
+                <input type="checkbox" asp-for="showFlag" />
+                <label asp-for="showFlag">Available</label>
+                <span asp-validation-for="showFlag"></span>
+            </div>
+            <div class="field">
+                <label asp-for="shortDescription"></label>
+                <textarea asp-for="shortDescription" placeholder="Enter short description"> </textarea>
+                <span asp-validation-for="shortDescription"></span>
+            </div>
+            <div class="field">
+                <label asp-for="longDescription"></label>
+                <textarea asp-for="longDescription" id="demo-message" placeholder="Enter long description" rows="6"> </textarea>
+                <span asp-validation-for="longDescription"></span>
+            </div>
+        </div>
+        <input type="submit" value="Save" />
+        @*@{
+            if ()
+            {
+
+            }
+        }*@
+</form>
+</section>

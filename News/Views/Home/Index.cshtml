@@ -1,0 +1,20 @@
+﻿@model IEnumerable<PostItem>
+@using System.Diagnostics
+
+<!-- Featured Post -->
+@await Html.PartialAsync("FeaturedPostPartial")
+
+<!-- Posts -->
+<section class="posts">
+    @{
+        foreach (PostItem post in Model)
+        {
+            @await Html.PartialAsync("PostPartial", post)
+        }
+    }
+
+</section>
+
+<!-- Pagination -->
+@await Html.PartialAsync("PaginationPartial")
+
